@@ -102,7 +102,7 @@
     <header>
         <div class="tabs">
             <a href="ListProducts" class="tab active">List My Product</a>
-            <a href="ProductsData" class="tab">Total Product Sales</a>
+            <a href="ProductsData" class="tab">All Products</a>
         </div>
         <form action="Logout" method="post">
             <button id="logout-btn" onclick="logout()">Logout</button>
