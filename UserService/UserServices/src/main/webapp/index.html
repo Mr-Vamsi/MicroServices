@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-commerce Website</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-image: url('https://unsplash.com/photos/I-uYa5P-EgM/download?ixid=M3wxMjA3fDB8MXxzZWFyY2h8MzF8fGZydWl0JTIwYmFza2V0fGVufDB8fHx8MTcxNDIxNTI1MXww&force=true'); /* Replace 'background.jpg' with the path to your background image */
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+        .button-container {
+            display: flex;
+            gap: 20px;
+        }
+        .button {
+            padding: 10px 20px;
+            background-color: #070707;
+            color: #fff;
+            border: none;
+            border-radius: 25px; /* Making the buttons rounder */
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+        .button:hover {
+            background-color: #a0a0a0d7;
+        }
+        .title{
+            color: rgb(178, 248, 193);
+            padding-bottom: 100px;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="title">Welcome to our E-commerce Website</h1>
+    <div class="button-container">
+        <a href="login" class="button">Login</a>
+        <a href="register" class="button">Register</a>
+    </div>
+</body>
+</html>
