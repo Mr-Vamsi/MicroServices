@@ -1,14 +1,15 @@
 package com.ecomApp.UserServices.Services;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import com.ecomApp.UserServices.DTO.productsDTO;
 import com.ecomApp.UserServices.Entities.userServicesEntity;
 import com.ecomApp.UserServices.Repositories.userServicesRepository;
 import com.ecomApp.UserServices.RestUtils.restUtils;
+import io.restassured.response.Response;
 
 @Service
 public class userServicesServiceImpl implements userServicesService {
@@ -16,6 +17,7 @@ public class userServicesServiceImpl implements userServicesService {
     private userServicesRepository repository;
     public restUtils utils = new restUtils();
 
+    @SuppressWarnings("unused")
     @Override
     public userServicesEntity saveUserData(userServicesEntity entity) {
         userServicesEntity userData = repository.save(entity);
@@ -48,8 +50,8 @@ public class userServicesServiceImpl implements userServicesService {
 
     @Override
     public List<productsDTO> fetchAllProducts() {
-        List<productsDTO> dtos = utils.fetchAllProducts();
-        System.out.println(String.valueOf(dtos));
-        return dtos;
+        List<productsDTO> productsList = utils.fetchAllProducts();
+        System.out.println(productsList.get(0).getProductname());
+        return productsList;
     }
 }

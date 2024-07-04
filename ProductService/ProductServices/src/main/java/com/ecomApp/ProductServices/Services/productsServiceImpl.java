@@ -12,6 +12,7 @@ public class productsServiceImpl implements productsService{
     @Autowired
     private productsRepository repository;
 
+    @SuppressWarnings("unused")
     @Override
     public List<productsEntity> getAllProducts() {
         List<productsEntity> allProducts = repository.findAll();
@@ -22,6 +23,7 @@ public class productsServiceImpl implements productsService{
         }
     }
 
+    @SuppressWarnings("unused")
     @Override
     public productsEntity addProduct(productsEntity entity) {
         productsEntity addedProduct  = repository.save(entity);

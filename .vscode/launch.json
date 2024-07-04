@@ -19,6 +19,17 @@
             "mainClass": "com.ecomApp.ProductServices.ProductServicesApplication",
             "projectName": "ProductServices",
             "args": "",
+            "envFile": "${workspaceFolder}/.env",
+            "vmArgs": " -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=2242 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Dspring.jmx.enabled=true -Djava.rmi.server.hostname=localhost -Dspring.application.admin.enabled=true -Dspring.boot.project.name=ProductServices"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-OrderServicesApplication<OrderServices>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.ecomApp.OrderServices.OrderServicesApplication",
+            "projectName": "OrderServices",
+            "args": "",
             "envFile": "${workspaceFolder}/.env"
         }
     ]

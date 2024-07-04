@@ -1,13 +1,16 @@
 package com.ecomApp.UserServices.Controllers;
 
+import java.util.ArrayList;
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import com.ecomApp.UserServices.DTO.productsDTO;
 import com.ecomApp.UserServices.Entities.userServicesEntity;
 import com.ecomApp.UserServices.Services.userServicesService;
+
+import io.restassured.response.Response;
+
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -66,15 +69,21 @@ public class userServicesController {
             return "LoginPage";
         }
     }
+
     @RequestMapping("/createProduct")
-    public String saveProduct(@ModelAttribute("productsDTO") productsDTO productsDTO , ModelMap modelMap){
-        String  message = service.saveProduct(productsDTO);
+    public String saveProduct(@ModelAttribute("productsDTO") productsDTO productsDTO, ModelMap modelMap) {
+        String message = service.saveProduct(productsDTO);
         modelMap.addAttribute("msg", message);
         return "ListProductDetails";
     }
+
     @RequestMapping("/ProductsData")
-    public String fetchAllProducts(ModelMap modelMap){
-       List<productsDTO> productsList = service.fetchAllProducts();
-       return "allProductsPage";
+    public String fetchAllProducts(ModelMap modelMap) {
+        System.out.println("Called Products Data api");
+        List<productsDTO> response = service.fetchAllProducts();
+        System.out.println(response);
+        modelMap.addAttribute("products", response);
+        return "allProductsPage";
     }
+
 }
